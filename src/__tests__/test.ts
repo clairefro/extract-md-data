@@ -1,5 +1,8 @@
-import { Greeter } from '../index';
+import { mdExtract } from '../index';
 
-test('My Greeter', () => {
-  expect(Greeter('you')).toBe('Yo, you');
+describe.skip('General', () => {
+  it('Initializes with config', () => {
+    // const CONFIG = { foo: 'bar' };
+    // const mdExtract = new MdExtract(CONFIG);
+  });
 });

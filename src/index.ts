@@ -1,1 +1,1 @@
-export const Greeter = (name: string) => `Yo, ${name}`;
+export { mdExtract } from './mdExtract';
