@@ -12,6 +12,7 @@ A template for creating new npm packages with typscript
 ## Make a new package
 
 1. Clone this repo
+1. `cd` into new repo
 1. `npm i`
 1. Update `package.json` `{ name }` and any other props
 1. Write your code
