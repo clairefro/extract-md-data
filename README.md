@@ -8,6 +8,7 @@ A template for creating new npm packages with typscript
 - eslint
 - prettier
 - jest
+- whitelisting `lib/` for publishing
 
 ## Make a new package
 
