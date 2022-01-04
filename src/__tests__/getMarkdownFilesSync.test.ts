@@ -6,11 +6,11 @@ describe('getMarkdownFilepathsSync()', () => {
   const files = getMarkdownFilepathsSync(dir);
 
   it('Gets all markdown filepaths in dir', () => {
-    expect(files).toHaveLength(6);
+    expect(files).toHaveLength(6); // hard coding - change this if number of test markdowns changes
   });
 
   it('Only gets markdown files', () => {
     const allFilesAreMd = files.every((f) => /((\.md)|(\.markdown))$/.test(f));
-    expect(allFilesAreMd).toBeTruthy();
+    expect(allFilesAreMd).toBe(true);
   });
 });
