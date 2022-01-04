@@ -90,7 +90,9 @@ console.log(jsons);
 ]
 ```
 
-This data can be used with templating libraries like [`pug`](https://pugjs.org/) or [`handlebars`](https://handlebarsjs.com/) to build out static websites based off the markdown files. You can make your won routing logic - perhaps you want to leverage `relativePath`? up to you!
+This data can be used with templating libraries like [`pug`](https://pugjs.org/) or [`handlebars`](https://handlebarsjs.com/) to build out static websites based off the markdown files.
+
+You can make your own routing logic - perhaps you want to leverage `relativePath`? Up to you!
 
 ## Features
 
