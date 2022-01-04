@@ -1,6 +1,6 @@
 # extract-md-data
 
-A util for getting data and metadata for all markdown files in a given dir. Useful for static site generators.
+A util for getting data and metadata for all markdown files in a given dir. Useful for building static site generators.
 
 ## Usage
 
@@ -101,7 +101,7 @@ You can make your own routing logic - perhaps you want to leverage `relativeDir`
 - gets data for all files in `srcDir` with `.md` and `.markdown` extensions, recursively
 - ignores non-markdown files
 - extracts any custom yaml frontmatter into an object `fm`
-- extracts `relativeDir` and `slug`/`id` for markdown file for use with file-based routing
+- extracts `relativeDir` for use with file-based routing
 - generates a unique `id` for each file by hashing the `relativePath`
 - generates a url-safe `slug` for each file based on the `filename`
 
@@ -135,6 +135,7 @@ console.log(jsons[0]);
     },
     "content": "\n# On the first day\n\nGod created markdown\n",
     "relativePath": "nested/layer2/Day-One.md",
+    "relativeDir": "nested/layer2",
     "filename": "Day-One.md",
     "slug": "Day-One",  <======== slug casing is preserved
     "id": "be308ccd-71e6-5339-97d9-947670d116ba"
