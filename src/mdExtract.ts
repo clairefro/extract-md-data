@@ -8,14 +8,14 @@ import { slugify } from './lib/slugify';
 import { defaultConfig } from './config';
 import { MdExtractConfig } from './types';
 
-/** Extracts json data about all markdown files in a directory (relSrcDir), relative to specfied rootDir */
+/** Extracts json data about all markdown files in a directory (srcDir), with respect to a given rootDir */
 const mdExtract = (
   rootDir: string,
-  relSrcDir: string,
+  srcDir: string,
   _config: MdExtractConfig = {}
 ) => {
   const config = { ...defaultConfig, ..._config };
-  const srcDirPath = path.join(rootDir, relSrcDir);
+  const srcDirPath = path.resolve(rootDir, srcDir);
   const mdFilepaths = getMarkdownFilepathsSync(srcDirPath);
 
   const jsons = mdFilepaths.map((filepath) => {

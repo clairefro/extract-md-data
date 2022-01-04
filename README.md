@@ -4,7 +4,7 @@ A util for getting data and metadata for all markdown files in a given dir. Usef
 
 ## Usage
 
-For example, if you file structure is
+Given this example file structure:
 
 ```
 .
@@ -54,11 +54,11 @@ To get JSON data for all the markdown files in `docs` folder:
 const mdExtract = require('extract-md-data');
 const path = require('path');
 
-/* Define project rootDir and relative source dir where the markdown files live */
+/* Define project rootDir and srcDir where the markdown files live */
 const rootDir = path.resolve(__dirname);
-const relSrcDir = 'docs';
+const srcDir = path.resolve(rootDir, 'docs');
 
-const jsons = mdExtract(rootDir, relSrcDir);
+const jsons = mdExtract(rootDir, srcDir);
 
 console.log(jsons);
 ```
@@ -107,13 +107,15 @@ You can optionally pass a config object as a third argument.
 Currently, [options for `slugify`](https://github.com/simov/slugify#options) can be passed in `config.slugify`
 
 ```js
+// ...
+
 const customConfig = {
   slugify: {
     lower: false
   }
 };
 
-const jsons = mdExtract(rootDir, relSrcDir, customConfig);
+const jsons = mdExtract(rootDir, srcDir, customConfig);
 
 console.log(jsons[0]);
 ```

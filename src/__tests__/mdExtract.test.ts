@@ -10,10 +10,10 @@ beforeAll(() => {
 });
 
 describe('mdExtract()', () => {
-  const rootDir = path.resolve(__dirname, 'markdowns');
-  const relSrcDir = '.'; // srcDir is root dir in test
+  const rootDir = path.resolve(__dirname);
+  const srcDir = path.resolve(rootDir, 'markdowns');
 
-  const jsons = mdExtract(rootDir, relSrcDir);
+  const jsons = mdExtract(rootDir, srcDir);
 
   it('Returns objects of expected format', () => {
     expect(typeof jsons[0].content).toMatch('string');
