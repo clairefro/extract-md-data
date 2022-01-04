@@ -51,14 +51,14 @@ To get JSON data for all the markdown files in `docs` folder:
 ```js
 // index.js
 
-const mdExtract = require('extract-md-data');
+const extract = require('extract-md-data');
 const path = require('path');
 
 /* Define project rootDir and srcDir where the markdown files live */
 const rootDir = path.resolve(__dirname);
 const srcDir = path.resolve(rootDir, 'docs');
 
-const jsons = mdExtract(rootDir, srcDir);
+const jsons = extract(rootDir, srcDir);
 
 console.log(jsons);
 ```
@@ -117,7 +117,7 @@ const customConfig = {
   }
 };
 
-const jsons = mdExtract(rootDir, srcDir, customConfig);
+const jsons = extract(rootDir, srcDir, customConfig);
 
 console.log(jsons[0]);
 ```

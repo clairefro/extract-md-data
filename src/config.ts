@@ -1,7 +1,7 @@
-import { MdExtractConfig } from './types';
+import { ExtractConfig } from './types';
 
 /** Default config for mdExtract */
-export const defaultConfig: MdExtractConfig = {
+export const defaultConfig: ExtractConfig = {
   slugify: {
     replacement: '-',
     remove: /[*+~.()'"!:@$%^()]/g,

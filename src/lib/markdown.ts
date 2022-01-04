@@ -1,4 +1,4 @@
-import * as matter from 'gray-matter';
+import matter from 'gray-matter';
 
 interface MarkdownData {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

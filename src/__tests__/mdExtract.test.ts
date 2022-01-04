@@ -1,19 +1,19 @@
-import * as path from 'path';
+import path from 'path';
 import { getMarkdownFilepathsSync } from '../lib/files';
-import mdExtract from '../mdExtract';
+import extract from '../';
 
-let testMarkdownFilepaths;
+let testMarkdownFilepaths: string[];
 
 beforeAll(() => {
   const dir = path.resolve(__dirname, 'markdowns');
   testMarkdownFilepaths = getMarkdownFilepathsSync(dir);
 });
 
-describe('mdExtract()', () => {
+describe('extract()', () => {
   const rootDir = path.resolve(__dirname);
   const srcDir = path.resolve(rootDir, 'markdowns');
 
-  const jsons = mdExtract(rootDir, srcDir);
+  const jsons = extract(rootDir, srcDir);
 
   it('Returns objects of expected format', () => {
     expect(typeof jsons[0].content).toMatch('string');

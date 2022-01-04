@@ -10,6 +10,6 @@ export type SlugifyOptions =
     }
   | string;
 
-export interface MdExtractConfig {
+export interface ExtractConfig {
   slugify?: SlugifyOptions;
 }
