@@ -1,7 +1,7 @@
 {
   "name": "extract-md-data",
   "author": "Claire Froelich",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A utility for getting JSON data about all markdown files in a given dir. Useful for building static site generators. Extracts data such as frontmatter, markdown content, relativePath, slug, id.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -9,11 +9,10 @@
     "test": "jest --config jestconfig.json",
     "build": "tsc",
     "lint": "eslint . --ext .ts",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
-    "version": "npm run format && git add -A src",
+    "version": "git add -A src",
     "postversion": "git push && git push --tags"
   },
   "keywords": [],
