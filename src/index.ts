@@ -1,1 +1,1 @@
-export { mdExtract } from './mdExtract';
+export * as mdExtract from './mdExtract';

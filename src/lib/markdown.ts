@@ -1,6 +1,12 @@
-import * as matter from 'gray-matter';
+import matter from 'gray-matter';
 
-const parseMd = (text: string) => {
+interface MarkdownData {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  fm: { [key: string]: any };
+  content: string;
+}
+
+const parseMd = (text: string): MarkdownData => {
   const parsed = matter(text);
   const { data: fm, content } = parsed;
   return { fm, content };

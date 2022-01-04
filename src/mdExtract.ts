@@ -1,49 +1,52 @@
 import * as path from 'path';
 import * as fs from 'fs';
+import stringHash from 'string-hash';
 
 import { getMarkdownFilepathsSync } from './lib/files';
 import { parseMd } from './lib/markdown';
-
-interface MdExtractConfig {
-  slug?: {
-    /** TODO: slugify config opts */
-  };
-}
+import { slugify } from './lib/slugify';
+import { defaultConfig } from './config';
+import { MdExtractConfig } from './types';
 
 /** Extracts json data about all markdown files in a directory (relSrcDir), relative to specfied rootDir */
 const mdExtract = (
   rootDir: string,
   relSrcDir: string,
-  config: MdExtractConfig = {}
+  _config: MdExtractConfig = {}
 ) => {
-  // get files
-  // for each file
-  // // extract json
-  // // build relPath
-  // // build slug
-  // // make an id that is hash of relPath + slug
-  // build relPaths, slugs,
+  const config = { ...defaultConfig, ..._config };
   const srcDirPath = path.join(rootDir, relSrcDir);
   const mdFilepaths = getMarkdownFilepathsSync(srcDirPath);
 
   const jsons = mdFilepaths.map((filepath) => {
     const raw = fs.readFileSync(filepath, 'utf-8');
+
+    /** Get frontmatter and markdown content */
     const { fm, content } = parseMd(raw);
 
-    // const relPath = filepath.replace(new RegExp(`^${appDir}/`), '');
-    // const prettyUrl = getPrettyUrl(relPath);
-    // const rawUrl = getRawUrl(relPath);
-    // const id = [getRepo(), relPath].join('/');
-    // const slug = slugify(`${fm.author}-${fm.title}`, {
-    //   replacement: '-', // replace spaces with replacement character, defaults to `-`
-    //   remove: /[*+~.()'"!:@$%^()]/g, // remove characters that match regex, defaults to `undefined`
-    //   lower: true, // convert to lower case, defaults to `false`
-    //   strict: true, // strip special characters except replacement, defaults to `false`
-    //   trim: true // trim leading and trailing replacement chars, defaults to `true`
-    // });
+    /** Get relative path of markdown file */
+    const relativePath = path.relative(rootDir, filepath);
 
-    return { fm, content, filepath };
+    /** Get id by hashing relativePath. You can't have two files with the same path ;)  */
+    const id = stringHash(relativePath);
+
+    /** Get filename of markdown file */
+    const match = relativePath.match(/\/([^/]+)$/);
+    if (!match) {
+      throw new Error(
+        `Error when parsing filename for file at path: ${filepath}`
+      );
+    }
+    const filename = match[1];
+
+    /** Get slug from filename */
+    const filenameNoExt = filename.replace(/((\.md)|(\.markdown))$/, '');
+    const slug = slugify(filenameNoExt, config.slugify);
+
+    return { fm, content, relativePath, filename, slug, id };
   });
+
   return jsons;
 };
-export { mdExtract };
+
+export default mdExtract;

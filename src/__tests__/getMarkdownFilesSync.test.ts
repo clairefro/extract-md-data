@@ -6,7 +6,7 @@ describe('getMarkdownFilepathsSync()', () => {
   const files = getMarkdownFilepathsSync(dir);
 
   it('Gets all markdown filepaths in dir', () => {
-    expect(files).toHaveLength(6); // hard coding - change this if number of test markdowns changes
+    expect(files).toHaveLength(10); // hard coding - change this if number of test markdowns changes
   });
 
   it('Only gets markdown files', () => {
