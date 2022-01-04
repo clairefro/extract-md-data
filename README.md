@@ -74,7 +74,7 @@ console.log(jsons);
     "relativePath": "nested/layer2/Day-One.md",
     "filename": "Day-One.md",
     "slug": "day-one",
-    "id": 1056230571
+    "id": "be308ccd-71e6-5339-97d9-947670d116ba"
   },
   {
     "fm": {
@@ -85,7 +85,7 @@ console.log(jsons);
     "relativePath": "nested/layer2/Day-Two.md",
     "filename": "Day-Two.md",
     "slug": "day-two",
-    "id": 3295981379
+    "id": "c115a245-d83c-5a8e-9d61-2bb40c05afdb
   }
 ]
 ```
@@ -134,7 +134,7 @@ console.log(jsons[0]);
     "relativePath": "nested/layer2/Day-One.md",
     "filename": "Day-One.md",
     "slug": "Day-One",  <======== slug casing is preserved
-    "id": 1056230571
+    "id": "be308ccd-71e6-5339-97d9-947670d116ba
   },
   ...
 ]
