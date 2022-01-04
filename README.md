@@ -72,6 +72,7 @@ console.log(jsons);
     },
     "content": "\n# On the first day\n\nGod created markdown\n",
     "relativePath": "nested/layer2/Day-One.md",
+    "relativeDir": "nested/layer2",
     "filename": "Day-One.md",
     "slug": "day-one",
     "id": "be308ccd-71e6-5339-97d9-947670d116ba"
@@ -83,6 +84,7 @@ console.log(jsons);
     },
     "content": "\n# On the second day\n\nGod created another markdown\n",
     "relativePath": "nested/layer2/Day-Two.md",
+    "relativeDir": "nested/layer2",
     "filename": "Day-Two.md",
     "slug": "day-two",
     "id": "c115a245-d83c-5a8e-9d61-2bb40c05afdb"
@@ -92,13 +94,14 @@ console.log(jsons);
 
 This data can be used with templating libraries like [`pug`](https://pugjs.org/) or [`handlebars`](https://handlebarsjs.com/) to build out static websites based off the markdown files.
 
-You can make your own routing logic - perhaps you want to leverage `relativePath`? Up to you!
+You can make your own routing logic - perhaps you want to leverage `relativeDir`? Up to you!
 
 ## Features
 
 - gets data for all files in `srcDir` with `.md` and `.markdown` extensions, recursively
 - ignores non-markdown files
 - extracts any custom yaml frontmatter into an object `fm`
+- extracts `relativeDir` and `slug`/`id` for markdown file for use with file-based routing
 - generates a unique `id` for each file by hashing the `relativePath`
 - generates a url-safe `slug` for each file based on the `filename`
 

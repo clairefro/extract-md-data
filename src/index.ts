@@ -24,8 +24,9 @@ const extract = (
     /** Get frontmatter and markdown content */
     const { fm, content } = parseMd(raw);
 
-    /** Get relative path of markdown file */
+    /** Get relative path and dir of markdown file */
     const relativePath = path.relative(rootDir, filepath);
+    const relativeDir = relativePath.replace(/\/[^/]*$/, '');
 
     /** Get id by hashing relativePath. You can't have two files with the same path ;)  */
     const id = getUuid(relativePath);
@@ -43,7 +44,7 @@ const extract = (
     const filenameNoExt = filename.replace(/((\.md)|(\.markdown))$/, '');
     const slug = slugify(filenameNoExt, config.slugify);
 
-    return { fm, content, relativePath, filename, slug, id };
+    return { fm, content, relativePath, relativeDir, filename, slug, id };
   });
 
   return jsons;
