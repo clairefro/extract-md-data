@@ -138,7 +138,7 @@ Boolean indicating whether or not to return markdown body `content`. You can set
 ```js
 {
   // omits markdown body in returned objects
-  omitContent: false;
+  omitContent: true;
 }
 ```
 
