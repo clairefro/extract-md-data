@@ -20,7 +20,13 @@
     "version": "git add -A src",
     "postversion": "git push && git push --tags origin main"
   },
-  "keywords": [],
+  "keywords": [
+    "markdown",
+    "json",
+    "frontmatter",
+    "file based routing",
+    "static site generator"
+  ],
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^27.4.0",
