@@ -73,8 +73,8 @@ console.log(jsons);
       "tags": ["foo", "bar"]
     },
     "content": "\n# On the first day\n\nGod created markdown\n",
-    "relativePath": "nested/layer2/Day-One.md",
-    "relativeDir": "nested/layer2",
+    "relativePath": "docs/Day-One.md",
+    "relativeDir": "docs",
     "filename": "Day-One.md",
     "slug": "day-one",
     "id": "be308ccd-71e6-5339-97d9-947670d116ba"
@@ -85,8 +85,8 @@ console.log(jsons);
       "tags": ["baz", "pistachio"]
     },
     "content": "\n# On the second day\n\nGod created another markdown\n",
-    "relativePath": "nested/layer2/Day-Two.md",
-    "relativeDir": "nested/layer2",
+    "relativePath": "docs/Day-Two.md",
+    "relativeDir": "docs",
     "filename": "Day-Two.md",
     "slug": "day-two",
     "id": "c115a245-d83c-5a8e-9d61-2bb40c05afdb"
