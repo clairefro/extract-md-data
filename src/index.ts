@@ -22,7 +22,11 @@ const extract = (
     const raw = fs.readFileSync(filepath, 'utf-8');
 
     /** Get frontmatter and markdown content */
-    const { fm, content } = parseMd(raw);
+    const { fm, content: contentExtracted } = parseMd(raw);
+    let content;
+    if (!config.omitContent) {
+      content = contentExtracted;
+    }
 
     /** Get relative path and dir of markdown file */
     const relativePath = path.relative(rootDir, filepath);

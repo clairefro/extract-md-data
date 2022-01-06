@@ -1,6 +1,6 @@
 import path from 'path';
 import { getMarkdownFilepathsSync } from '../lib/files';
-import extract from '../';
+import extract from '..';
 
 let testMarkdownFilepaths: string[];
 

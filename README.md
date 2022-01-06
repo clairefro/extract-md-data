@@ -109,42 +109,13 @@ You can make your own routing logic - perhaps you want to leverage `relativeDir`
 
 You can optionally pass a config object as a third argument.
 
-Currently, [options for `slugify`](https://github.com/simov/slugify#options) can be passed in `config.slugify`
-
 ```js
-// ...
-
-const customConfig = {
-  slugify: {
-    lower: false
-  }
-};
-
-const jsons = extract(rootDir, srcDir, customConfig);
-
-console.log(jsons[0]);
+const jsons = extract(rootDir, srcDir, opts);
 ```
 
-```json
+### `options.slugify`
 
-[
-  {
-    "fm": {
-      "title": "day one",
-      "tags": ["foo", "bar"]
-    },
-    "content": "\n# On the first day\n\nGod created markdown\n",
-    "relativePath": "nested/layer2/Day-One.md",
-    "relativeDir": "nested/layer2",
-    "filename": "Day-One.md",
-    "slug": "Day-One",  <======== slug casing is preserved
-    "id": "be308ccd-71e6-5339-97d9-947670d116ba"
-  },
-  ...
-]
-```
-
-Default slugify settings are:
+Options for `slugify`. [See available settings](https://github.com/simov/slugify#options). These are the default settings:
 
 ```js
 {
@@ -155,6 +126,17 @@ Default slugify settings are:
     strict: true,
     trim: true
   }
+}
+```
+
+### `options.omitContent`
+
+Boolean indicating whether or not to return markdown body `content`. You can set this to `true` if you don't need the markdown bodies from the files and want to save memory. Defaults to `false`
+
+```js
+{
+  // omits markdown body in returned objects
+  omitContent: false;
 }
 ```
 

@@ -8,5 +8,6 @@ export const defaultConfig: ExtractConfig = {
     lower: true,
     strict: true,
     trim: true
-  }
+  },
+  omitContent: false
 };

@@ -12,4 +12,5 @@ export type SlugifyOptions =
 
 export interface ExtractConfig {
   slugify?: SlugifyOptions;
+  omitContent?: boolean;
 }
