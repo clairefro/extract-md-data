@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/extract-md-data.svg)](https://badge.fury.io/js/extract-md-data)
+
 # extract-md-data
 
 A util for getting data and metadata for all markdown files in a given dir. Useful for building static site generators.
