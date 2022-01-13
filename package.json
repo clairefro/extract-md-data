@@ -27,7 +27,7 @@
     "file based routing",
     "static site generator"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^27.4.0",
     "@types/string-hash": "^1.1.1",
